@@ -8,6 +8,3 @@ import cors from 'cors';
     const express = require('express');
 */
 
-vfdvlkm
-;ljfdjn
-idfjovfjoi
