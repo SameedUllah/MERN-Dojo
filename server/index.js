@@ -8,3 +8,9 @@ import cors from 'cors';
     const express = require('express');
 */
 
+const app = express();
+
+app.use(bodyParser.json({limit: '30mb', extended: true}));
+app.use(bodyParser.urlencoder({limit: '30mb', extended: true}));
+app.use(cors());
+iosjhudfjnbkh
