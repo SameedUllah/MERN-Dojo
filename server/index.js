@@ -2,6 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
+
+import postRoutes from './routes/posts.js';
 /*  The syntax below is old ...but in newer versions of node we are able to to use 'import' syntax as written above, 
     to enable this ALL we need to do is that goto package.json and add a line below "main" as "type": "module", Thats It !
 
@@ -9,6 +11,8 @@ import cors from 'cors';
 */
 
 const app = express();
+
+app.use('/posts', postroutes);
 
 app.use(bodyParser.json({limit: '30mb', extended: true}));
 app.use(bodyParser.urlencoded({limit: '30mb', extended: true}));
@@ -23,5 +27,3 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
     .catch((error) => console.log(error.message));
 
 mongoose.set('useFindAndModify', false);
-
-
